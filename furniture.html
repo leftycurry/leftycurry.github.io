@@ -108,7 +108,15 @@
               </h5>
               <div class="price_box">
                 <a href="">
-                  Solve Problem
+                  <button onclick="runPythonScript()">Solve Problem</button>
+                    <script>
+                    function runPythonScript() {
+                    // Get the path to the Python script.
+                    var pythonScriptPath = "helloworld.py";
+                    // Run the Python script.
+                    subprocess.run(["python", pythonScriptPath]);
+                    }
+                  </script>
                 </a>
               </div>
             </div>
