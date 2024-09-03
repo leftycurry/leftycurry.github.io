@@ -196,13 +196,27 @@
                 Regular time series - Constand Trend(EMA) 
               </h5>
               <div class="price_box">
-                <a href="">
-                  Solve Problem
-                </a>
+                <button id="greet-btn">Solve Problem</button>
               </div>
             </div>
           </div>
         </div>
+          <script>
+            document.getElementById('greet-btn').addEventListener('click', function() {
+                // Prompt the user for their name
+                const name = prompt("Please enter your name:");
+                if (name) {
+                    alert("Hello, " + name + "!");
+                } else {
+                    alert("Hello, stranger!");
+                }
+            });
+          </script>
+
+
+
+
+          
         <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="detail-box">
