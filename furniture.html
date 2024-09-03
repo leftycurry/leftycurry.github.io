@@ -165,22 +165,26 @@
                 Regular time series - Constand Trend(WMA) 
               </h5>
               <div class="price_box">
-                <button type="submit-button" type="submit" py-onClick="my_function()">Solve Problem</button>
-              </div>
+                <button id="upload-btn">Solve Problem</button>
+                <input type="file" id="file-input" style="display: none;" />
             </div>
           </div>
         </div>
-        <py-script>
-            def hello_world():
-                print("Hello, World!")
-        </py-script>
         <script>
-            document.getElementById('run-script-btn').addEventListener('click', function() {
-                // Call the Python function defined above
-                pyscript.run('hello_world');  // Ensure this matches the function name in your script
+            document.getElementById('upload-btn').addEventListener('click', function() {
+                // Trigger the file input when the button is clicked
+                document.getElementById('file-input').click();
+            });
+        
+            document.getElementById('file-input').addEventListener('change', function(event) {
+                const fileList = event.target.files;
+                if (fileList.length > 0) {
+                    const fileName = fileList[0].name;
+                    alert('Selected file: ' + fileName);
+                }
             });
         </script>
-        
+                
         
 
 
