@@ -136,6 +136,9 @@
             </div>
           </div>
         </div>
+
+
+        
         <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="detail-box">
@@ -151,6 +154,11 @@
             </div>
           </div>
         </div>
+
+
+
+
+        
         <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="detail-box">
@@ -158,13 +166,26 @@
                 Regular time series - Constand Trend(WMA) 
               </h5>
               <div class="price_box">
-                <a href="">
-                  Solve Problem
-                </a>
+                <button type="button" id="run-script-btn">Solve Problem</button>
               </div>
             </div>
           </div>
         </div>
+        <py-script>
+            def hello_world():
+                print("Hello, World!")
+        </py-script>
+        <script>
+            document.getElementById('run-script-btn').addEventListener('click', function() {
+                // Call the Python function defined above
+                pyscript.run('hello_world');  // Ensure this matches the function name in your script
+            });
+        </script>
+        
+        
+
+
+        
         <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="detail-box">
