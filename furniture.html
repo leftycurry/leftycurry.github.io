@@ -12,9 +12,17 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
+
+  
   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  <py-env>
+    - paths:
+      - ./helloworld.py
+  </py-env>
 
+
+  
   <title>Michael GOM</title>
 
 
@@ -137,6 +145,7 @@
               <div class="price_box">
                 <form action="/run-try" method="POST">
                     <button type="submit">Solve Problem</button>
+                    <py-script src="helloworld.py"></py-script>
                 </form>
               </div>
             </div>
