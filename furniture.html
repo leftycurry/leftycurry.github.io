@@ -18,7 +18,8 @@
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
   <py-env>
     - paths:
-      - ./helloworld.py
+      - ./python/helloworld.py
+      - ./python/EOQ.py
   </py-env>
 
 
@@ -145,10 +146,12 @@
                 Regular time series - Constand Trend(SWA)
               </h5>
               <div class="price_box">
-                <form action="/run-try" method="POST">
-                    <button type="submit">Solve Problem</button>
-                    <py-script src="helloworld.py"></py-script>
-                </form>
+                <a href="">
+                  <form action="/run-try" method="POST">
+                      <button type="submit">Solve Problem</button>
+                      <py-script src="EOQ.py"></py-script>
+                  </form>
+                </a>
               </div>
             </div>
           </div>
