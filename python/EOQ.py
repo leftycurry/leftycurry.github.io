@@ -38,5 +38,5 @@ def EOQ():
     except ValueError:
         print("Invalid input. Please enter numeric values.")
 
-if __name__ == "__EOQ__":
+if __name__ == "__main__":
     EOQ()
