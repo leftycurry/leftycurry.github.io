@@ -227,13 +227,47 @@
                 Regular time series - Linear Trend (Regression)
               </h5>
               <div class="price_box">
-                <a href="">
-                  Solve Problem
-                </a>
+                <a href="#" class="btn btn-primary" onclick="calculateEOQ()">Solve Problem</a>
               </div>
             </div>
           </div>
         </div>
+        <py-script>
+          import math
+  
+          def calculate_EOQ():
+              D = float(pyodide.input("D (Annual demand for the item in inventory in units): "))
+              S = float(pyodide.input("S (Procurement cost in Dollars per order): "))
+              C = float(pyodide.input("C (Value of the item carried in inventory in dollars per unit): "))
+              I = float(pyodide.input("I (Carrying cost as a percent of item value in Percentage per year): "))
+              
+              # Calculate EOQ
+              numerator = 2 * D * S
+              denominator = I * C
+              
+              if denominator == 0:
+                  return "The denominator is zero. Please check your inputs for C and I."
+              
+              Q_squared = numerator / denominator
+              
+              if Q_squared < 0:
+                  return "There is no real solution for Q. The value is negative. please check your inputs again."
+              
+              Q = math.sqrt(Q_squared)
+              Q_up = math.ceil(Q)
+              
+              # Calculate Total Cost (TC)
+              TC = (D / Q_up) * S + (I * C / 2) * Q_up
+              
+              return f"Your economic order quantity will be: {Q_up}\nYour total inventory cost will be: {TC:.2f}"
+  
+          def calculateEOQ():
+              result = calculate_EOQ()
+              pyodide.console.log(result)
+        </py-script>
+
+
+          
         <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="detail-box">
