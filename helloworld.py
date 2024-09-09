@@ -5,7 +5,11 @@ def hello():
 def add(a, b):
     return a + b
 
+def eoqtry(D, S, C, I):
+    return (2 * D * S) / (I * C)
+
 def eoq(D, S, C, I):
+    return
         numerator = 2 * D * S
         denominator = I * C
         
