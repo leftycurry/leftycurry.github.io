@@ -173,17 +173,17 @@
                 Pull inventory control - single (Economic order quantity EOQ)
               </h5>
               <div class="">
-                  <input type="number" id="D" placeholder="Annual demand (D) in units" required>
-                  <input type="number" id="S" placeholder="Procurement cost (S) in Dollars per order" required>
-                  <input type="number" id="C" placeholder="Value of item (C) in Dollars per unit" required>
-                  <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year" required>
+                  <input type="number" id="D" placeholder="Annual demand (D) in units">
+                  <input type="number" id="S" placeholder="Procurement cost (S) in Dollars per order">
+                  <input type="number" id="C" placeholder="Value of item (C) in Dollars per unit">
+                  <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year">
                   <button id="button_EOQ">Solve Problem</button>
                   <py-script>
                       def on_eoq(event_eoq):
-                              D = float(Element("D").element.value)
-                              S = float(Element("S").element.value)
-                              C = float(Element("C").element.value)
-                              I = float(Element("I").element.value) / 100  # Convert percentage to decimal
+                              D = int(Element("D").element.value)
+                              S = int(Element("S").element.value)
+                              C = int(Element("C").element.value)
+                              I = int(Element("I").element.value)
                               
                               result = eoqtry(D, S, C, I)
                     
