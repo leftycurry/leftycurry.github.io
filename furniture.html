@@ -324,6 +324,43 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="col-md-6 col-lg-4 mx-auto">
+                <div class="box">
+                    <div class="detail-box">
+                      <h5>
+                        Pull inventory control - single (Economic order quantity EOQ)
+                      </h5>
+                      <div class="">
+                          <input type="number" id="D" placeholder="Annual demand (D) in units">
+                          <input type="number" id="S" placeholder="Procurement cost (S) in Dollars per order">
+                          <input type="number" id="C" placeholder="Value of item (C) in Dollars per unit">
+                          <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year">
+                          <button id="button_EOQ">Solve Problem</button>
+                          <py-script>
+                              def on_eoq(event_eoq):
+                                      D = int(Element("D").element.value)
+                                      S = int(Element("S").element.value)
+                                      C = int(Element("C").element.value)
+                                      I = int(Element("I").element.value)
+                                      
+                                      result = eoq(D, S, C, I)
+                            
+                                      Element("out_eoq").element.innerHTML = result
+                                  #except ValueError:
+                                      #Element("output").element.innerHTML = "Invalid input. Please enter numeric values."
+                          
+                              Element("button_EOQ").element.onclick = on_eoq
+                         </py-script>
+                <div id="out_eoq"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+            
             <div class="col-md-6 col-lg-4">
                 <div class="box">
                     <div class="detail-box">
