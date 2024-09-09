@@ -173,24 +173,45 @@
                 Pull inventory control - single (Economic order quantity EOQ)
               </h5>
               <div class="">
-                  <input type="number" id="D (Annual demand for the item in inventory in units):" placeholder="">
-                  <input type="number" id="S (Procurement cost in Dollars per order):" placeholder="">
-                  <input type="number" id="C (Value of the item carried in inventory in dollars per unit): " placeholder="">
-                  <input type="number" id="I (Carrying cost as a percent of item value in Percentage per year): " placeholder="">
+                  <input type="number" id="D" placeholder="Annual demand (D) in units" required>
+                  <input type="number" id="S" placeholder="Procurement cost (S) in Dollars per order" required>
+                  <input type="number" id="C" placeholder="Value of item (C) in Dollars per unit" required>
+                  <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year" required>
                   <button id="button_EOQ">Solve Problem</button>
                   <py-script>
-                      def on_button_click(event):
-                          D = int(Element("D").element.value)
-                          S = int(Element("S").element.value)
-                          C = int(Element("C").element.value)
-                          I = int(Element("I").element.value)
-                          # 调用外部 Python 文件中的函数
-                          result = eoq(D, S, C, I)
-                          # 将结果显示在页面中
-                          Element("out_eoq").element.innerHTML = result
-  
-                          # 获取按钮并绑定点击事件
-                          Element("button_EOQ").element.onclick = on_button_click
+                      import math
+                      def calculate_eoq(D, S, C, I):
+                          numerator = 2 * D * S
+                          denominator = I * C
+                          
+                          if denominator == 0:
+                              return "The denominator is zero. Please check your inputs for C and I."
+                          
+                          Q_squared = numerator / denominator
+                          
+                          if Q_squared < 0:
+                              return "There is no real solution for Q. The value is negative. Please check your inputs again."
+                          
+                          Q = math.sqrt(Q_squared)
+                          Q_up = math.ceil(Q)
+                          
+                          TC = (D / Q_up) * S + (I * C / 2) * Q_up
+                          
+                          return f"Your economic order quantity will be: {Q_up}<br>Your total inventory cost will be: ${TC:.2f}"
+                  
+                      def on_calculate(event):
+                          try:
+                              D = float(Element("D").element.value)
+                              S = float(Element("S").element.value)
+                              C = float(Element("C").element.value)
+                              I = float(Element("I").element.value) / 100  # Convert percentage to decimal
+                              
+                              result = calculate_eoq(D, S, C, I)
+                              Element("output").element.innerHTML = result
+                          except ValueError:
+                              Element("output").element.innerHTML = "Invalid input. Please enter numeric values."
+                  
+                      Element("calculateButton").element.onclick = on_calculate
                     </py-script>
                 <div id="out_eoq"></div>
               </div>
