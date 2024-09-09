@@ -7,7 +7,7 @@ def add(a, b):
 
 def eoqtry(D, S, C, I):
     return D+S+C+I
-    #return (2 * D * S) / (I * C)
+
 
 def eoq(D, S, C, I):
     return
@@ -35,3 +35,4 @@ def eoq(D, S, C, I):
         # Conclusions
         print(f"Your economic order quantity will be: {Q_up}")
         print(f"Your total inventory cost will be: {TC:.2f}")
+    #return (2 * D * S) / (I * C)
