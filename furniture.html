@@ -352,6 +352,192 @@
 </section>
 
 
+
+
+
+
+
+
+
+
+
+
+
+<section class="blog_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Global Operation Management - Inventory Management 
+        </h2>
+        <p>
+           This page aims to help you solve problems from the Global operation management sector, specifically about Inventory Management.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="detail-box">
+              <h5>
+                Overall Service Level
+              </h5>
+              <a href="">
+                Solve Problem
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+        
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="detail-box">
+              <h5>
+                Weighted Average fill rate (WAFR)
+              </h5>
+              <a href="">
+                Solve Problem
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+        
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="detail-box">
+              <h5>
+                Push inventory control 
+              </h5>
+              <a href="">
+                Solve Problem
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-6 col-lg-4">
+                <div class="box">
+                    <div class="detail-box">
+                        <h5>
+                            Pull inventory control - single (order quantity)
+                        </h5>
+                        <div class="">
+                            <input type="number" id="a" placeholder="input">
+                            <input type="number" id="b" placeholder="input">
+                            <button id="button_order">Solve Problem</button>
+                            <py-script>
+                                    def on_order(event_order):
+                                        a = int(Element("a").element.value)
+                                        b = int(Element("b").element.value)
+                                        # 调用外部 Python 文件中的函数
+                                        result = add(a,b)
+                                        # 将结果显示在页面中
+                                        Element("out_order").element.innerHTML = result
+
+                                    # 获取按钮并绑定点击事件
+                                    Element("button_order").element.onclick = on_order
+                            </py-script>
+                            <div id="out_order"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="detail-box">
+              <h5>
+                Pull inventory control - single (Economic order quantity EOQ)
+              </h5>
+              <div class="">
+                  <input type="number" id="D" placeholder="Annual demand (D) in units">
+                  <input type="number" id="S" placeholder="Procurement cost (S) in Dollars per order">
+                  <input type="number" id="C" placeholder="Value of item (C) in Dollars per unit">
+                  <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year">
+                  <button id="button_EOQ">Solve Problem</button>
+                  <py-script>
+                      def on_eoq(event_eoq):
+                              D = int(Element("D").element.value)
+                              S = int(Element("S").element.value)
+                              C = int(Element("C").element.value)
+                              I = int(Element("I").element.value)
+                              
+                              result = eoqtry(D, S, C, I)
+                    
+                              Element("out_eoq").element.innerHTML = result
+                          #except ValueError:
+                              #Element("output").element.innerHTML = "Invalid input. Please enter numeric values."
+                  
+                      Element("button_EOQ").element.onclick = on_eoq
+                    </py-script>
+                <div id="out_eoq"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="detail-box">
+              <h5>
+                Optimal Reorder Point - Instantaneous Resupply
+              </h5>
+              <a href="">
+                Solve Problem
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="detail-box">
+              <h5>
+                Optimal Reorder Point - NON - Instantaneous Resupply
+              </h5>
+              <a href="">
+                Solve Problem
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
 <!-- footer section -->
 <footer class="footer_section">
     <div class="container">
