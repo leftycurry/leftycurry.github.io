@@ -179,16 +179,17 @@
                   <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year" required>
                   <button id="button_EOQ">Solve Problem</button>
                   <py-script>
-                      def on_eoq(D, S, C, I):
+                      def on_eoq(event_eoq):
                               D = float(Element("D").element.value)
                               S = float(Element("S").element.value)
                               C = float(Element("C").element.value)
                               I = float(Element("I").element.value) / 100  # Convert percentage to decimal
                               
-                              result = eoq(D, S, C, I)
+                              result = eoqtry(D, S, C, I)
+                    
                               Element("out_eoq").element.innerHTML = result
-                          except ValueError:
-                              Element("output").element.innerHTML = "Invalid input. Please enter numeric values."
+                          #except ValueError:
+                              #Element("output").element.innerHTML = "Invalid input. Please enter numeric values."
                   
                       Element("button_EOQ").element.onclick = on_eoq
                     </py-script>
