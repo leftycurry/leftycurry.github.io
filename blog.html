@@ -197,7 +197,7 @@
                               C = int(Element("C").element.value)
                               I = int(Element("I").element.value)
                               
-                              result = eoqtry(D, S, C, I)
+                              result = eoq(D, S, C, I)
                     
                               Element("out_eoq").element.innerHTML = result
                           #except ValueError:
