@@ -15,7 +15,9 @@
 
   <title>Michael GOM</title>
 
-
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -112,6 +114,10 @@
             </div>
           </div>
         </div>
+
+
+
+        
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="detail-box">
@@ -124,6 +130,10 @@
             </div>
           </div>
         </div>
+
+
+
+        
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="detail-box">
@@ -136,6 +146,10 @@
             </div>
           </div>
         </div>
+
+
+
+        
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="detail-box">
@@ -148,18 +162,46 @@
             </div>
           </div>
         </div>
+
+
+
+        
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="detail-box">
               <h5>
                 Pull inventory control - single (Economic order quantity EOQ)
               </h5>
-              <a href="">
-                Solve Problem
-              </a>
+              <div class="">
+                  <input type="number" id="D (Annual demand for the item in inventory in units):" placeholder="">
+                  <input type="number" id="S (Procurement cost in Dollars per order):" placeholder="">
+                  <input type="number" id="C (Value of the item carried in inventory in dollars per unit): " placeholder="">
+                  <input type="number" id="I (Carrying cost as a percent of item value in Percentage per year): " placeholder="">
+                  <button id="button_EOQ">Solve Problem</button>
+                  <py-script>
+                      def on_button_click(event):
+                          D = int(Element("D").element.value)
+                          S = int(Element("S").element.value)
+                          C = int(Element("C").element.value)
+                          I = int(Element("I").element.value)
+                          # 调用外部 Python 文件中的函数
+                          result = eoq(D, S, C, I)
+                          # 将结果显示在页面中
+                          Element("out_eoq").element.innerHTML = result
+  
+                          # 获取按钮并绑定点击事件
+                          Element("button_EOQ").element.onclick = on_button_click
+                    </py-script>
+                <div id="out_eoq"></div>
+              </div>
             </div>
           </div>
         </div>
+
+
+
+
+        
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="detail-box">
