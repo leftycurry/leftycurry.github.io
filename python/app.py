@@ -1,4 +1,3 @@
-pip install Flask
 from flask import Flask, render_template
 import subprocess
 
