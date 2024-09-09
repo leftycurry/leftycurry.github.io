@@ -179,39 +179,18 @@
                   <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year" required>
                   <button id="button_EOQ">Solve Problem</button>
                   <py-script>
-                      import math
-                      def calculate_eoq(D, S, C, I):
-                          numerator = 2 * D * S
-                          denominator = I * C
-                          
-                          if denominator == 0:
-                              return "The denominator is zero. Please check your inputs for C and I."
-                          
-                          Q_squared = numerator / denominator
-                          
-                          if Q_squared < 0:
-                              return "There is no real solution for Q. The value is negative. Please check your inputs again."
-                          
-                          Q = math.sqrt(Q_squared)
-                          Q_up = math.ceil(Q)
-                          
-                          TC = (D / Q_up) * S + (I * C / 2) * Q_up
-                          
-                          return f"Your economic order quantity will be: {Q_up}<br>Your total inventory cost will be: ${TC:.2f}"
-                  
-                      def on_calculate(event):
-                          try:
+                      def on_eoq(D, S, C, I):
                               D = float(Element("D").element.value)
                               S = float(Element("S").element.value)
                               C = float(Element("C").element.value)
                               I = float(Element("I").element.value) / 100  # Convert percentage to decimal
                               
-                              result = calculate_eoq(D, S, C, I)
-                              Element("output").element.innerHTML = result
+                              result = eoq(D, S, C, I)
+                              Element("out_eoq").element.innerHTML = result
                           except ValueError:
                               Element("output").element.innerHTML = "Invalid input. Please enter numeric values."
                   
-                      Element("calculateButton").element.onclick = on_calculate
+                      Element("button_EOQ").element.onclick = on_eoq
                     </py-script>
                 <div id="out_eoq"></div>
               </div>
