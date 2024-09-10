@@ -191,11 +191,11 @@
                   <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year">
                   <button id="button_EOQ">Solve Problem</button>
                   <py-script>
-                      def on_eoq(event_eoq):
-                              D = int(Element("D").element.value)
-                              S = int(Element("S").element.value)
-                              C = int(Element("C").element.value)
-                              I = int(Element("I").element.value)
+                      def on_eoq(event):
+                              D = float(Element("D").element.value)
+                              S = float(Element("S").element.value)
+                              C = float(Element("C").element.value)
+                              I = float(Element("I").element.value)
                               
                               result = eoq(D, S, C, I)
                     
