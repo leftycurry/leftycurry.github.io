@@ -29,6 +29,6 @@ def eoq(D, S, C, I):
         return
         print(f"Your total inventory cost will be: {TC:.2f}") 
         return
-
+        return TC
     except ValueError:
         print("Invalid input. Please enter numeric values.")
