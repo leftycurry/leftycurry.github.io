@@ -1,4 +1,4 @@
-def eoq(D, S, C, I)
+def eoq(D,S,C,I)
   try:
         #Q = sqrt(2DS / (IC))
         numerator = 2 * D * S
