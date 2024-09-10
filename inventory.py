@@ -1,10 +1,5 @@
 def eoq(D, S, C, I)
   try:
-        D = float(input("D (Annual demand for the item in inventory in units): "))
-        S = float(input("S (Procurement cost in Dollars per order): "))
-        C = float(input("C (Value of the item carried in inventory in dollars per unit): "))
-        I = float(input("I (Carrying cost as a percent of item value in Percentage per year): "))
-        
         #Q = sqrt(2DS / (IC))
         numerator = 2 * D * S
         denominator = I * C
