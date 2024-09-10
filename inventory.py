@@ -25,10 +25,10 @@ def eoq(D, S, C, I):
         TC = (D / Q_up) * S + (I * C / 2) * Q_up
 
         # Conclusions
-        print(f"Your economic order quantity will be: {Q_up}") return
-        print(f"Your total inventory cost will be: {TC:.2f}") return
-        return Q_up
-        return TC
+        print(f"Your economic order quantity will be: {Q_up}") 
+        return
+        print(f"Your total inventory cost will be: {TC:.2f}") 
+        return
 
     except ValueError:
         print("Invalid input. Please enter numeric values.")
