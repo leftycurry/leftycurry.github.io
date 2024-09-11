@@ -33,7 +33,7 @@ def eoq(D, S, C, I):
         print("Invalid input. Please enter numeric values.")
 
 
-def instant(D, S, C, I, LT):
+def instant(D,S,C,I,LT):
     try:
         #find out the total cost and economic order quantity 
         numerator = 2 * D * S
