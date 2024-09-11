@@ -32,6 +32,7 @@ def eoq(D, S, C, I):
     except ValueError:
         print("Invalid input. Please enter numeric values.")
 
+import math
 
 def instant(D,S,C,I,LT):
     try:
@@ -47,10 +48,11 @@ def instant(D,S,C,I,LT):
         #find out the Reorder point quantity in units 
         R_square = (D/52) * LT
         R_up = math.ceil(R_square)
+        return R_up
 
         #Conclusion 
         print(f"When the inventory level drops to {R_up} units, place a replenishment order for {Q_up}")
-        return f"When the inventory level drops to {R_up} units, place a replenishment order for {Q_up}"
+        return f"When the inventory level drops to {R_up} units, </br> place a replenishment order for {Q_up}"
         
 
 
