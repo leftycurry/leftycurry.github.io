@@ -221,12 +221,36 @@
               <h5>
                 Optimal Reorder Point - Instantaneous Resupply
               </h5>
-              <a href="">
-                Solve Problem
-              </a>
-            </div>
+              <div class="">
+                  <input type="number" id="D" placeholder="Annual demand (D) in units">
+                  <input type="number" id="S" placeholder="Procurement cost (S) in Dollars per order">
+                  <input type="number" id="C" placeholder="Value of item (C) in Dollars per unit">
+                  <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year">
+                  <input type="number" id="LT" placeholder="Average lead time in time units">
+                  <button id="button_instant">Solve Problem</button>
+                  <py-script>
+                      def on_instant(event):
+                              D = float(Element("D").element.value)
+                              S = float(Element("S").element.value)
+                              C = float(Element("C").element.value)
+                              I = float(Element("I").element.value)
+                              LT = float(Element("LT").element.value)
+                              
+                              result = instant(D,S,C,I,LT)
+                    
+                              Element("out_instant").element.innerHTML = result
+                  
+                      Element("button_instant").element.onclick = on_instant
+                    </py-script>
+                <div id="out_instant"></div>
+              </div>
           </div>
         </div>
+
+
+
+
+        
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="detail-box">
