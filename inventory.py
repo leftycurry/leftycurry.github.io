@@ -1,7 +1,7 @@
 import math
 
 
-def eoq(D, S, C, I):
+def instant(D, S, C, I):
     try:
         # Q = sqrt(2DS / (IC))
         numerator = 2 * D * S
