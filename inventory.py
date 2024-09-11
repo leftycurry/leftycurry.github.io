@@ -1,7 +1,7 @@
 import math
 
 
-def instant(D, S, C, I):
+def eoq(D, S, C, I):
     try:
         # Q = sqrt(2DS / (IC))
         numerator = 2 * D * S
@@ -33,7 +33,7 @@ def instant(D, S, C, I):
         print("Invalid input. Please enter numeric values.")
 
 
-def eoq(D, S, C, I, LT):
+def instant(D, S, C, I, LT):
     try:
         #find out the total cost and economic order quantity 
         numerator = 2 * D * S
