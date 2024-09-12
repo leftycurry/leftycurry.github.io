@@ -18,7 +18,7 @@ def order(D, S, C, I, LT):
 
         # Conclusion 
         print(f"When the inventory level drops to {R_up} units, place a replenishment order for {Q_up}.")
-        return f"When the inventory level drops to {R_up} units, place a replenishment order for {Q_up}."
+        return f"When the inventory level drops to {R_up}</br>units, place a replenishment order for {Q_up}."
         
     except ValueError:
         print("Invalid input. Please enter numeric values.")
