@@ -223,19 +223,19 @@
                 Optimal Reorder Point - Instantaneous Resupply
               </h5>
               <div class="">
-                  <input type="number" id="D" placeholder="Annual demand (D) in units">
-                  <input type="number" id="S" placeholder="Procurement cost (S) in Dollars per order">
-                  <input type="number" id="C" placeholder="Value of item (C) in Dollars per unit">
-                  <input type="number" id="I" placeholder="Carrying cost (I) as a percent per year">
-                  <input type="number" id="LT" placeholder="Average lead time in time units">
+                  <input type="number" id="D1" placeholder="Annual demand (D) in units">
+                  <input type="number" id="S1" placeholder="Procurement cost (S) in Dollars per order">
+                  <input type="number" id="C1" placeholder="Value of item (C) in Dollars per unit">
+                  <input type="number" id="I1" placeholder="Carrying cost (I) as a percent per year">
+                  <input type="number" id="LT1" placeholder="Average lead time in time units">
                   <button id="button_instant">Solve Problem</button>
                   <py-script>
                       def on_instant(event):
-                              D = float(Element("D").element.value)
-                              S = float(Element("S").element.value)
-                              C = float(Element("C").element.value)
-                              I = float(Element("I").element.value)
-                              LT = float(Element("LT").element.value)
+                              D = float(Element("D1").element.value)
+                              S = float(Element("S1").element.value)
+                              C = float(Element("C1").element.value)
+                              I = float(Element("I1").element.value)
+                              LT = float(Element("LT1").element.value)
                               
                               result = order(D,S,C,I,LT)
                     
