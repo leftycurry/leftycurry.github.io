@@ -15,11 +15,10 @@ def order(D, S, C, I, LT):
         # Calculate Reorder point quantity in units 
         R_square = (D / 52) * LT
         R_up = math.ceil(R_square)
-        return R_up
 
         # Conclusion 
-        message = f"When the inventory level drops to {R_up} units, place a replenishment order for {Q_up}."
-        print(message)
-        return message
+        print(f"When the inventory level drops to {R_up} units, </br> place a replenishment order for {Q_up}.")
+        return f"When the inventory level drops to {R_up} units, </br> place a replenishment order for {Q_up}."
+        
     except ValueError:
         print("Invalid input. Please enter numeric values.")
