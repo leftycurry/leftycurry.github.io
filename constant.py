@@ -17,7 +17,7 @@ def order(D, S, C, I, LT):
         R_up = math.ceil(R_square)
 
         # Conclusion 
-        print(f"When the inventory level drops to {R_up} units, </br> place a replenishment order for {Q_up}.")
+        print(f"When the inventory level drops to {R_up} units, place a replenishment order for {Q_up}.")
         return f"When the inventory level drops to {R_up} units, </br> place a replenishment order for {Q_up}."
         
     except ValueError:
