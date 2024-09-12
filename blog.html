@@ -240,6 +240,8 @@
                               result = order(D,S,C,I,LT)
                     
                               Element("out_instant").element.innerHTML = result
+                           #except ValueError:
+                              #Element("output").element.innerHTML = "Invalid input. Please enter numeric values."
                   
                       Element("button_instant").element.onclick = on_instant
                     </py-script>
