@@ -1,6 +1,6 @@
 import math
 
-def instant(D, S, C, I, LT):
+def order(D, S, C, I, LT):
     try:
         # Calculate total cost and economic order quantity 
         numerator = 2 * D * S
